@@ -1,4 +1,4 @@
-import { Code, Server, Wrench } from 'lucide-react';
+import { Code, Server, Wrench, Database, Cloud, TestTube, BarChart, Brain } from 'lucide-react';
 import { portfolioData } from '../../data/portfolio';
 
 const Skills = () => {
@@ -18,10 +18,40 @@ const Skills = () => {
       color: "green"
     },
     {
-      title: "Tools & Technologies",
+      title: "Database",
+      icon: <Database className="w-6 h-6" />,
+      skills: skills.database,
+      color: "purple"
+    },
+    {
+      title: "Cloud & DevOps",
+      icon: <Cloud className="w-6 h-6" />,
+      skills: skills.cloud,
+      color: "indigo"
+    },
+    {
+      title: "Testing",
+      icon: <TestTube className="w-6 h-6" />,
+      skills: skills.testing,
+      color: "orange"
+    },
+    {
+      title: "Tools & Version Control",
       icon: <Wrench className="w-6 h-6" />,
       skills: skills.tools,
-      color: "purple"
+      color: "gray"
+    },
+    {
+      title: "Data Science & Analytics",
+      icon: <BarChart className="w-6 h-6" />,
+      skills: skills.dataScience,
+      color: "cyan"
+    },
+    {
+      title: "Machine Learning",
+      icon: <Brain className="w-6 h-6" />,
+      skills: skills.machineLearning,
+      color: "pink"
     }
   ];
 
@@ -29,18 +59,35 @@ const Skills = () => {
     const colors = {
       blue: {
         bg: "bg-blue-100 dark:bg-blue-900",
-        text: "text-blue-600 dark:text-blue-400",
-        progress: "bg-blue-600"
+        text: "text-blue-600 dark:text-blue-400"
       },
       green: {
         bg: "bg-green-100 dark:bg-green-900",
-        text: "text-green-600 dark:text-green-400",
-        progress: "bg-green-600"
+        text: "text-green-600 dark:text-green-400"
       },
       purple: {
         bg: "bg-purple-100 dark:bg-purple-900",
-        text: "text-purple-600 dark:text-purple-400",
-        progress: "bg-purple-600"
+        text: "text-purple-600 dark:text-purple-400"
+      },
+      indigo: {
+        bg: "bg-indigo-100 dark:bg-indigo-900",
+        text: "text-indigo-600 dark:text-indigo-400"
+      },
+      orange: {
+        bg: "bg-orange-100 dark:bg-orange-900",
+        text: "text-orange-600 dark:text-orange-400"
+      },
+      gray: {
+        bg: "bg-gray-100 dark:bg-gray-700",
+        text: "text-gray-600 dark:text-gray-400"
+      },
+      cyan: {
+        bg: "bg-cyan-100 dark:bg-cyan-900",
+        text: "text-cyan-600 dark:text-cyan-400"
+      },
+      pink: {
+        bg: "bg-pink-100 dark:bg-pink-900",
+        text: "text-pink-600 dark:text-pink-400"
       }
     };
     return colors[color];
@@ -61,7 +108,7 @@ const Skills = () => {
         </div>
 
         {/* Skills Categories */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category, categoryIndex) => {
             const colors = getColorClasses(category.color);
             
