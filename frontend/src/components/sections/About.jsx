@@ -45,14 +45,22 @@ const About = () => {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 p-1">
                 <div className="w-full h-full rounded-2xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                  {personal.image ? (
+          <img 
+            src={personal.image} 
+            alt={personal.name}
+            className="w-full h-full rounded-2xl object-cover"
+          />
+        ):(
                   <div className="text-center">
                     <div className="text-6xl font-bold text-gray-600 dark:text-gray-400 mb-2">
                       {personal.name.charAt(0)}
                     </div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Add your photo here
+                     Add your photo
                     </p>
                   </div>
+        )}
                 </div>
               </div>
               {/* Decorative elements */}

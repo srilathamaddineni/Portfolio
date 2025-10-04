@@ -5,7 +5,7 @@ const Hero = () => {
   const { personal, social } = portfolioData;
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4 pt-24 pb-20">
       <div className="max-w-4xl mx-auto text-center">
         {/* Profile Image */}
         <div className="mb-8">
@@ -30,7 +30,7 @@ const Hero = () => {
 
         {/* Bio */}
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-          {personal.bio}
+          {personal.intro}
         </p>
 
         {/* Location */}

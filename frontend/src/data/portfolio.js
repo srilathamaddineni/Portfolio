@@ -2,7 +2,8 @@ export const portfolioData = {
   personal: {
     name: "Srilatha Maddineni",
     title: "Full Stack Developer",
-    bio: "Passionate Full Stack Developer with expertise in modern web technologies. I love building scalable applications and learning new technologies.",
+    intro:"Software Engineer with 3+ years of experience building scalable apps and exploring the future of cloud and AI",
+    bio: "I’m a software engineer with 3+ years of experience building scalable applications across front-end, back-end, and cloud technologies. I enjoy working with React, Spring Boot, Node.js, and PostgreSQL, and have hands-on expertise with AWS, Azure, Docker, and Kubernetes. Recently, I’ve been expanding my skills in cloud-native architectures and AI-driven solutions, always striving to learn and grow with evolving technologies.",
     email: "srilathamaddineni78@gmail.com",
     phone: "+1 (703) 474-5155",
     location: "Fairfax, Virginia",
