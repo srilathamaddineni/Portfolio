@@ -105,7 +105,7 @@ export const portfolioData = {
         "Amazon Bedrock"
       ],
       githubUrl: "https://github.com/srilathamaddineni/CloudMart",
-      image: "/project1.jpg"
+      image: "/CloudMart.png"
     },
     {
       id: 2,
@@ -124,7 +124,7 @@ export const portfolioData = {
         "REST APIs"
       ],
       githubUrl: "https://github.com/srilathamaddineni/Blog-Platform-with-Spring-Security",
-      image: "/project2.jpg"
+      image: "/BlogImage.png"
     },
     {
       id: 3,
