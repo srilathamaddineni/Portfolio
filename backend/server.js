@@ -3,6 +3,8 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
+const postsRouter = require('./routes/posts');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -14,6 +16,9 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.json({ message: 'Portfolio API is running!' });
 });
+
+// Blog routes
+app.use('/api/posts', postsRouter);
 
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {

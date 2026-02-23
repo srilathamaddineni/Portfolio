@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
-const Header = () => {
+const Header = ({ currentView, onViewChange }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -17,10 +17,19 @@ const Header = () => {
 
   const scrollToSection = (href) => {
     setIsMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (currentView !== 'portfolio') {
+      onViewChange('portfolio');
+      setTimeout(() => {
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleBlogClick = () => {
+    setIsMenuOpen(false);
+    onViewChange('blog');
   };
 
   return (
@@ -28,9 +37,12 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="text-xl font-bold text-gray-900 dark:text-white">
+          <button
+            onClick={() => onViewChange('portfolio')}
+            className="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
             Srilatha
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -43,6 +55,16 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
+            <button
+              onClick={handleBlogClick}
+              className={`font-medium transition-colors duration-200 ${
+                currentView === 'blog'
+                  ? 'text-blue-600 dark:text-blue-400'
+                  : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+              }`}
+            >
+              Blog
+            </button>
             <ThemeToggle />
           </div>
 
@@ -71,6 +93,16 @@ const Header = () => {
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={handleBlogClick}
+                className={`text-left font-medium transition-colors duration-200 ${
+                  currentView === 'blog'
+                    ? 'text-blue-600 dark:text-blue-400'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                }`}
+              >
+                Blog
+              </button>
             </div>
           </div>
         )}
